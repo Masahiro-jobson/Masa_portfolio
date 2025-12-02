@@ -1,5 +1,5 @@
 export const Home = () =>{
-    return <div className="min-he-screen">
+    return <div className="min-he-screen bg-background text-foreground overflow-x-hidden">
         
         {/* Theme Toggle -> To change light and dark mode */}
 
