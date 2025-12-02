@@ -1,9 +1,14 @@
+import { Background } from "../components/Background";
+import { ThemeToggle } from "../components/ThemeToggle";
+
 export const Home = () =>{
     return <div className="min-he-screen bg-background text-foreground overflow-x-hidden">
         
         {/* Theme Toggle -> To change light and dark mode */}
+        <ThemeToggle/>
 
         {/* Background Effects -> Animation of Wall paper */}
+        <Background/>
 
         {/* NavBar -> Top buttons to navigate each part of portfolio */}
 

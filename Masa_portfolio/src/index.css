@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-border: hsl(val(--border));
-  --color-background: hsl(val(--background));
-  --color-foreground: hsl(val(--foreground));
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
 
-  --color-primary: hsl(val(--primary));
-  --color-primary-foreground: hsl(val(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary--foreground));
   
-  --color-card: hsl(val(--card));
+  --color-card: hsl(var(--card));
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
@@ -98,7 +98,7 @@
     --primary: 250 65% 65%;
     --primary-foreground: 213 31% 91%;
     
-    --border: 217 333% 20%;
+    --border: 217 33% 20%;
 
   }
 
@@ -119,7 +119,7 @@
 }
 
 @utility container{
-  margine-inline:auto;
+  margin-inline:auto;
   padding-inline: 2rem;
 
   /* Setting up size for different devices */
@@ -151,7 +151,7 @@
 
 @utility gradient-border{
   @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)))
+  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
   background-clip: padding-box;
   border: 1px solid transparent;
 }
@@ -163,18 +163,23 @@
 }
 
 @utility star{
-  @apply absolute rounded-full bg-white;
+  opacity:0;
+  transition:opacity 300ms;
+
+
+  @apply absolute rounded-full bg-orange-300;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+
 }
 
 @utility meteor{
-  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+  @apply absolute bg-linear-to-r from-orange-300 via-orange-300 to-transparent rounded-full;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
 #root {
   max-width: 100%;
   margin: 0 auto;
-  padding: 0%;
+  padding: 0;
   text-align: center;
 }
