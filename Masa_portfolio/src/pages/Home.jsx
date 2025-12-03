@@ -1,4 +1,5 @@
 import { Background } from "../components/Background";
+import { NavBar } from "../components/NavBar";
 import { ThemeToggle } from "../components/ThemeToggle";
 
 export const Home = () =>{
@@ -11,6 +12,7 @@ export const Home = () =>{
         <Background/>
 
         {/* NavBar -> Top buttons to navigate each part of portfolio */}
+        <NavBar/>
 
         {/* Main Content  */}
 

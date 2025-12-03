@@ -6,7 +6,7 @@
   --color-foreground: hsl(var(--foreground));
 
   --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary--foreground));
+  --color-primary-foreground: hsl(var(--primary-foreground));
   
   --color-card: hsl(var(--card));
 
@@ -17,7 +17,7 @@
   --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
+  --animate-shootingStar: shootingStar 5s linear infinite;
 
 @keyframes float {
   0%,
@@ -38,15 +38,7 @@
     opacity: 0.8;
   }
 }
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -58,8 +50,8 @@
   }
 }
 
-@keyframes meteor {
-  0%,{
+@keyframes shootingStar {
+  0%{
     transform: rotate(215deg) translateX(0);
     opacity: 1;
   }
@@ -67,11 +59,10 @@
     opacity: 1;
   }
   100% {
-    transform: rotate(215deg) translateX (-500px);
+    transform: rotate(215deg) translateX(-500px);
     opacity: 0;
   }
-}
-
+} 
 }
 
 @layer base {
@@ -166,13 +157,12 @@
   opacity:0;
   transition:opacity 300ms;
 
-
   @apply absolute rounded-full bg-orange-300;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 
 }
 
-@utility meteor{
+@utility shootingStar{
   @apply absolute bg-linear-to-r from-orange-300 via-orange-300 to-transparent rounded-full;
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }

@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react";
 
 // id, size, x, y, opacity, animationDuration
+// id, size, x, y, delay, animationDuration
 
 export const Background = () => {
+    // Make states for stars & shooting Stars.
     const [stars, setStars] = useState([])
+    const [shootingStars, setShootingStars] = useState([])
 
     useEffect(() => {
-        generateStars()
+        generateStars();
+        generateShootingStars();
+
+        const handleResize = () => {
+            generateStars();
+        };
+
+        window.addEventListener("resize", handleResize)
+
+        return () => window.removeEventListener("resize", handleResize);
+
     }, [])
 
     const generateStars = () => {
         const numberOfStars = Math.floor(window.innerWidth * window.innerHeight / 10000)
-
         const newStars = [];
     
         for (let i = 0; i< numberOfStars; i++){
@@ -28,7 +40,26 @@ export const Background = () => {
         setStars(newStars);
     };
 
-    return <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    const generateShootingStars = () => {
+        const numberOfShootingStars = 4;
+        const newShootingStars= [] ;
+    
+        for (let i = 0; i< numberOfShootingStars; i++){
+            newShootingStars.push({
+                id:i,
+                size: Math.random() *2 +1,
+                x: Math.random() *100,
+                y: Math.random() *20,
+                delay: Math.random() *15,
+                animationDuration: Math.random() * 3 + 3,
+            });    
+        }
+
+        setShootingStars(newShootingStars);
+    };
+
+    return (
+     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         {stars.map((star) => (
             <div key={star.id} className="star animate-pulse-subtle" style={{
                 width: star.size + "px",
@@ -37,8 +68,20 @@ export const Background = () => {
                 top: star.y + "%",
                 opacity: star.opacity,
                 animationDuration: star.animationDuration + "s",
-            }}></div>
+            }}/>
         ))}
-    </div>
+
+        {shootingStars.map((shootingStar) => (
+            <div key={shootingStar.id} className="shootingStar animate-shootingStar" style={{
+                width: shootingStar.size * 50 + "px", 
+                height: shootingStar.size *2 + "px",
+                left: shootingStar.x + "%",
+                top: shootingStar.y + "%",
+                animationDelay: shootingStar.delay,
+                animationDuration: shootingStar.animationDuration + "s",
+            }}/>
+        ))}
+     </div>
+    );
 
 }
