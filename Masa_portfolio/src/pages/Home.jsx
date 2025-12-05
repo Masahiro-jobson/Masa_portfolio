@@ -1,3 +1,4 @@
+import { AbilitySection } from "../components/AbilitySection";
 import { About } from "../components/About";
 import { Background } from "../components/Background";
 import { MyBackground } from "../components/MyBackground";
@@ -20,6 +21,7 @@ export const Home = () =>{
         <main>
             <MyBackground/>
             <About/>
+            <AbilitySection/>
         </main>
 
         {/* Footer  */}
