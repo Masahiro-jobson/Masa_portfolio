@@ -1,9 +1,11 @@
+import { About } from "../components/About";
 import { Background } from "../components/Background";
+import { MyBackground } from "../components/MyBackground";
 import { NavBar } from "../components/NavBar";
 import { ThemeToggle } from "../components/ThemeToggle";
 
 export const Home = () =>{
-    return <div className="min-he-screen bg-background text-foreground overflow-x-hidden">
+    return <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
         
         {/* Theme Toggle -> To change light and dark mode */}
         <ThemeToggle/>
@@ -15,6 +17,10 @@ export const Home = () =>{
         <NavBar/>
 
         {/* Main Content  */}
+        <main>
+            <MyBackground/>
+            <About/>
+        </main>
 
         {/* Footer  */}
 

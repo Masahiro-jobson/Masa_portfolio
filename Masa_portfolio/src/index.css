@@ -68,28 +68,28 @@
 @layer base {
   /* normal color */
   :root{
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 28 40% 98%;       /* very light orange tint */
+    --foreground: 28 47% 15%;       /* dark orange-brown (readable text) */
 
-    --card: 0 0% 100%;
-    
-    --primary: 250 47% 60%;
-    --primary-foreground: 210 40% 98%;
-    
-    --border: 214 32% 91%;
+    --card: 28 30% 100%;            /* white with slight warmth */
+
+    --primary: 28 95% 73%;          /* your original orange-300 */
+    --primary-foreground: 28 40% 98%;
+
+    --border: 28 32% 85%;  
     
   }
   /* dark color */
   .dark {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
-  
-    --card: 222 47% 8%;
-    
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
-    
-    --border: 217 33% 20%;
+    --background: 28 30% 8%;        /* deep warm dark */
+    --foreground: 28 35% 92%;       /* warm light text */
+
+    --card: 28 30% 12%;             /* slightly lighter dark warm */
+
+    --primary: 28 95% 73%;          /* same orange-300 */
+    --primary-foreground: 28 35% 92%;
+
+    --border: 28 30% 25%;    
 
   }
 
@@ -133,7 +133,7 @@
 
 @utility text-glow{
   @apply relative;
-  text-shadow: 0 0 10px rgba(255, 188, 140, 0.5);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 @utility card-hover{
@@ -149,7 +149,7 @@
 
 @utility cosmic-button{
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
-  transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+  transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.5)]
   hover:scale-105 active:scale-95;
 }
 
