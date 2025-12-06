@@ -12,11 +12,11 @@ export const About = () => {
                 <div className="space-y-6">
                     <h3 className="text-2xl font-semibold">Enthusiastic Web Developer</h3>
                     <p className="text-muted-foreground">
-                        I am an IT student who has learned programming languages for over 2 years by himself. 
+                        I am an IT student who has learned programming languages for over 2 years by myself. 
                         I'm passionate about building full-stack software.
                     </p>
                     <p className="text-muted-foreground">
-                        I worked not only my individual projects by bymyself but also team projects through internships experience. 
+                        I worked not only my individual projects by myself but also team projects through internships experience. 
                         With extensive experience working in the early stages of product development, I solves problems with sustainability in mind.
                     </p>
 
